@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Select Web Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #121212, #2c2c2c);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      color: #fff;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      padding: 40px;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(31, 38, 135, 0.15);
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      margin-bottom: 40px;
+      color: #fff;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+
+    .crown {
+      position: absolute;
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2em;
+      color: gold;
+      text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+    }
+
+    .button {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      padding: 15px 30px;
+      margin: 15px 0;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.1em;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .button:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-5px);
+    }
+
+    .button:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Language flag style */
+    .language-flags {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .language-flags img {
+      width: 30px;
+      height: 22px;
+      cursor: pointer;
+      border-radius: 4px;
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+    }
+
+    .language-flags img:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="crown">👑</div>
+    <h1 id="title">Select a Web Page</h1>
+    <a href="https://enchanting-lebkuchen-35b10e.netlify.app/" class="button" id="chieftGear">Chieft Gear</a>
+    <a href="https://bucolic-rolypoly-cf48e0.netlify.app/" class="button" id="troopTraining">Troop Training</a>
+    <a href="https://astounding-kataifi-0212ee.netlify.app/" class="button" id="chiefGearGuide">Chief Gear Guide</a>
+  </div>
+
+  <!-- Language flags -->
+  <div class="language-flags">
+    <img src="https://flagcdn.com/24x18/gb.png" alt="English" onclick="setLanguage('en')" title="English">
+    <img src="https://flagcdn.com/24x18/cn.png" alt="中文" onclick="setLanguage('cn')" title="中文 (Chinese)">
+    <img src="https://flagcdn.com/24x18/ru.png" alt="Русский" onclick="setLanguage('ru')" title="Русский (Russian)">
+    <img src="https://flagcdn.com/24x18/th.png" alt="ไทย" onclick="setLanguage('th')" title="ภาษาไทย (Thai)">
+  </div>
+
+  <script>
+    function setLanguage(lang) {
+      const title = document.getElementById('title');
+      const chieftGear = document.getElementById('chieftGear');
+      const troopTraining = document.getElementById('troopTraining');
+      const chiefGearGuide = document.getElementById('chiefGearGuide');
+
+      const translations = {
+        en: {
+          title: 'Select a Web Page',
+          chieftGear: 'Chieft Gear',
+          troopTraining: 'Troop Training',
+          chiefGearGuide: 'Chief Gear Guide'
+        },
+        cn: {
+          title: '选择网页',
+          chieftGear: '首席装备',
+          troopTraining: '部队训练',
+          chiefGearGuide: '首席装备指南'
+        },
+        ru: {
+          title: 'Выберите веб-страницу',
+          chieftGear: 'Главное снаряжение',
+          troopTraining: 'Тренировка войск',
+          chiefGearGuide: 'Руководство по снаряжению'
+        },
+        th: {
+          title: 'เลือกหน้าเว็บไซต์',
+          chieftGear: 'อุปกรณ์ของหัวหน้า',
+          troopTraining: 'ฝึกทหาร',
+          chiefGearGuide: 'คู่มืออุปกรณ์หัวหน้า'
+        }
+      };
+
+      const selected = translations[lang];
+      if (selected) {
+        title.textContent = selected.title;
+        chieftGear.textContent = selected.chieftGear;
+        troopTraining.textContent = selected.troopTraining;
+        chiefGearGuide.textContent = selected.chiefGearGuide;
+      }
+    }
+  </script>
+</body>
+</html>
