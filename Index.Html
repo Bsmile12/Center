@@ -2,46 +2,53 @@
 <html lang="en">
 <head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3731613425695803"
-            crossorigin="anonymous"></script>
+             crossorigin="anonymous"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Select Web Page</title>
     <style>
+        /* Resetting default browser styles */
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #121212, #2c2c2c);
+            font-family: 'Montserrat', sans-serif; /* Font ที่ดูทันสมัยและหรูหรา */
+            background-color: #121212; /* พื้นหลังสีดำเข้ม */
             display: flex;
             align-items: center;
             justify-content: center;
-            height: 100vh;
-            color: #fff;
+            min-height: 100vh;
+            color: #eee; /* สีข้อความหลักสีขาวนวล */
             overflow: hidden;
             position: relative;
+            /* เพิ่ม Gradient พื้นหลังแบบ Subtle */
+            background: linear-gradient(to bottom, #222, #121212);
         }
 
         .container {
             text-align: center;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.08); /* พื้นหลังกรอบโปร่งใส */
+            backdrop-filter: blur(10px); /* เอฟเฟกต์ Blur พื้นหลัง */
+            padding: 60px;
             width: 90%;
-            max-width: 500px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(31, 38, 135, 0.15);
+            max-width: 600px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1); /* ขอบบางๆ โปร่งใส */
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); /* เงาลึก */
             position: relative;
+            z-index: 1; /* ให้เนื้อหาอยู่บน Background */
         }
 
         h1 {
-            font-size: 2.2em;
-            margin-bottom: 40px;
-            color: #fff;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-            position: relative;
+            font-size: 3em;
+            margin-bottom: 50px;
+            color: #fff; /* สีหัวข้อสีขาว */
+            letter-spacing: 0.05em;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* เงาเรืองรองเล็กน้อย */
         }
 
         .crown {
@@ -49,34 +56,58 @@
             top: -40px;
             left: 50%;
             transform: translateX(-50%);
-            font-size: 2em;
+            font-size: 2.2em;
             color: gold;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+            text-shadow: 0 0 15px gold; /* เงาเรืองรองสีทอง */
+            animation: crownShine 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes crownShine {
+            from { opacity: 0.8; }
+            to { opacity: 1; text-shadow: 0 0 20px gold, 0 0 30px #fff; }
         }
 
         .button {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            padding: 15px 30px;
+            background-color: rgba(255, 255, 255, 0.1); /* พื้นหลังปุ่มโปร่งใส */
+            color: #fff; /* สีข้อความปุ่มสีขาว */
+            padding: 18px 35px;
             margin: 15px 0;
-            border: none;
-            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2); /* ขอบบางๆ โปร่งใส */
+            border-radius: 10px;
             cursor: pointer;
             font-size: 1.1em;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden; /* สำหรับเอฟเฟกต์ Hover */
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.1), transparent); /* แสงสว่างเคลื่อนที่ */
+            transition: all 0.6s ease-in-out;
+        }
+
+        .button:hover::before {
+            left: 100%;
         }
 
         .button:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.2); /* เปลี่ยนสีเล็กน้อย */
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
         .button:active {
-            transform: translateY(2px);
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transform: translateY(1px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         }
 
         /* Language flag style */
@@ -85,24 +116,51 @@
             bottom: 20px;
             right: 20px;
             display: flex;
-            gap: 10px;
+            gap: 12px;
         }
 
         .language-flags img {
-            width: 30px;
-            height: 22px;
+            width: 32px;
+            height: 24px;
             cursor: pointer;
             border-radius: 4px;
-            transition: transform 0.2s ease, box-shadow 0.3s ease;
+            opacity: 0.6;
+            transition: opacity 0.2s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
         }
 
         .language-flags img:hover {
+            opacity: 1;
             transform: scale(1.1);
-            box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Creator's Name */
+        .creator-name {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.5); /* สีเทาอ่อน */
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        /* Subtle Particle Background (Optional - Requires JavaScript) */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
         }
     </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </head>
 <body>
+    <div id="particles-js"></div>
+
     <div class="container">
         <div class="crown">👑</div>
         <h1 id="title">Select a Web Page</h1>
@@ -111,6 +169,7 @@
         <a href="https://trooptraing.netlify.app/" class="button" id="troopTraining">Troop Training</a>
         <a href="https://guidgear.netlify.app/" class="button" id="chiefGearGuide">Chief Gear Guide</a>
         <a href="https://chieft-gear-charm.netlify.app/" class="button" id="chiefGearCharm">Chief Gear Charm</a>
+        <div class="creator-name">(FAM)Smile</div>
     </div>
 
     <div class="language-flags">
@@ -173,6 +232,120 @@
                 troopHealing.textContent = selected.troopHealing;
                 chiefGearCharm.textContent = selected.chiefGearCharm;
             }
+        }
+
+        /* Optional: Initialize Particles.js */
+        window.onload = function() {
+            particlesJS('particles-js', {
+                particles: {
+                    number: {
+                        value: 80,
+                        density: {
+                            enable: true,
+                            value_area: 800
+                        }
+                    },
+                    color: {
+                        value: '#eee'
+                    },
+                    shape: {
+                        type: 'circle',
+                        stroke: {
+                            width: 0,
+                            color: '#000000'
+                        },
+                        polygon: {
+                            nb_sides: 5
+                        },
+                        image: {
+                            src: 'img/github.svg',
+                            width: 100,
+                            height: 100
+                        }
+                    },
+                    opacity: {
+                        value: 0.5,
+                        random: true,
+                        anim: {
+                            enable: false,
+                            speed: 1,
+                            opacity_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    size: {
+                        value: 3,
+                        random: true,
+                        anim: {
+                            enable: false,
+                            speed: 40,
+                            size_min: 0.1,
+                            sync: false
+                        }
+                    },
+                    line_linked: {
+                        enable: true,
+                        distance: 150,
+                        color: '#eee',
+                        opacity: 0.4,
+                        width: 1
+                    },
+                    move: {
+                        enable: true,
+                        speed: 3,
+                        direction: 'none',
+                        random: true,
+                        straight: false,
+                        out_mode: 'out',
+                        bounce: false,
+                        attract: {
+                            enable: false,
+                            rotateX: 600,
+                            rotateY: 1200
+                        }
+                    }
+                },
+                interactivity: {
+                    detect_on: 'canvas',
+                    events: {
+                        onhover: {
+                            enable: true,
+                            mode: 'grab'
+                        },
+                        onclick: {
+                            enable: true,
+                            mode: 'push'
+                        },
+                        resize: true
+                    },
+                    modes: {
+                        grab: {
+                            distance: 140,
+                            line_linked: {
+                                opacity: 1
+                            }
+                        },
+                        bubble: {
+                            distance: 400,
+                            size: 40,
+                            duration: 2,
+                            opacity: 0.8,
+                            speed: 3
+                        },
+                        repulse: {
+                            distance: 200,
+                            duration: 0.4
+                        },
+                        push: {
+                            particles_nb: 4
+                        },
+                        remove: {
+                            particles_nb: 2
+                        }
+                    }
+                },
+                retina_detect: true
+            });
         }
     </script>
 </body>
