@@ -152,6 +152,96 @@
             height: 100%;
             z-index: 0;
         }
+
+        /* Responsive Styles */
+        /* สำหรับแท็บเล็ต (หน้าจอเล็กกว่า 768px) */
+        /* Responsive Styles */
+        /* สำหรับแท็บเล็ต (หน้าจอเล็กกว่า 768px) */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 95%;
+                padding: 40px;
+            }
+
+            h1 {
+                font-size: 2.5em;
+                margin-bottom: 30px;
+            }
+
+            .button {
+                display: block;
+                font-size: 1em;
+                padding: 15px 25px;
+                margin: 10px auto;
+                width: 80%;
+                max-width: 300px;
+            }
+
+            .language-flags {
+                position: static; /* เปลี่ยนเป็น static เพื่อให้จัดวางตาม flow */
+                justify-content: center; /* จัดให้อยู่ตรงกลาง */
+                margin-top: 20px;
+                bottom: auto;
+                right: auto;
+            }
+
+            .crown {
+                font-size: 1.8em;
+                top: -30px;
+            }
+
+            .creator-name {
+                font-size: 0.8em;
+                bottom: 10px;
+                left: 10px;
+            }
+        }
+
+        /* สำหรับโทรศัพท์มือถือ (หน้าจอเล็กกว่า 480px) */
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px;
+            }
+
+            h1 {
+                font-size: 2em;
+                margin-bottom: 20px;
+            }
+
+            .button {
+                font-size: 0.9em;
+                padding: 12px 20px;
+                width: 90%;
+                max-width: none;
+            }
+
+            .crown {
+                font-size: 1.5em;
+                top: -25px;
+            }
+
+            .creator-name {
+                font-size: 0.7em;
+                bottom: 5px;
+                left: 5px;
+            }
+
+            .language-flags {
+                position: fixed; /* เปลี่ยนเป็น fixed เพื่อตรึงตำแหน่ง */
+                bottom: 10px; /* ปรับระยะห่างจากด้านล่าง */
+                right: 10px; /* ปรับระยะห่างจากด้านขวา */
+                display: flex;
+                gap: 8px;
+                z-index: 10; /* ให้ธงอยู่เหนือเนื้อหาอื่น */
+                margin: 0; /* ลบ margin ที่อาจมีผล */
+            }
+
+            .language-flags img {
+                width: 28px;
+                height: 20px;
+            }
+        }
+
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
